@@ -11,5 +11,5 @@ public class Student {
     private String email;
     private String major;
     private List<Course> coursesTaken;
-    private int gpa;
+    private float gpa;
 }
