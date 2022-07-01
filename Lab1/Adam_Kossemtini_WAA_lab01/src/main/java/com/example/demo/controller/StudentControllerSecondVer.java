@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import com.example.demo.dto.CourseDto;
+import com.example.demo.dto.StudentDto;
 import com.example.demo.entity.Course;
 import com.example.demo.entity.Student;
 import com.example.demo.service.StudentService;
@@ -17,12 +19,12 @@ import java.util.List;
 public class StudentControllerSecondVer {
     private final StudentService studentService;
     @GetMapping("/{major}")
-    public List<Student> getStudentsByMajor(@PathVariable String major){
+    public List<StudentDto> getStudentsByMajor(@PathVariable String major){
         return studentService.getStudentsByMajor(major);
     }
 
     @GetMapping("/{id}/courses")
-    public List<Course> getCoursesByStudentId(@PathVariable int id){
+    public List<CourseDto> getCoursesByStudentId(@PathVariable int id){
         return studentService.getCoursesByStudentId(id);
     }
 
